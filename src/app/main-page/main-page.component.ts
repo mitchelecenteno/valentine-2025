@@ -28,7 +28,6 @@ export class MainPageComponent {
     this.audio.play();
   }
 
-  // Play happy sound
   playHappySound() {
     if (this.audio) {
       this.audio.pause(); // Stop previous audio if any
