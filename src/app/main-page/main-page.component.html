@@ -1,0 +1,69 @@
+<div
+  class="flex flex-col justify-center items-center h-screen gap-4 bg-cover bg-center bg-no-repeat"
+  style="background-image: url('../../assets/background/cat-bg.jpg')"
+>
+  <div *ngIf="!choiceYes" class="flex flex-col justify-center items-center">
+    <img
+      src="../../assets/image/cat-rose.png"
+      alt="Valentine Image"
+      class="w-40 h-40 mb-4 rounded-full shadow-md"
+    />
+    <p class="text-2xl font-semibold pt-2">WILL YOU BE MY VALENTINE?</p>
+  </div>
+
+  <div *ngIf="!choiceYes">
+    <!-- YES button with shake effect initially -->
+    <button
+      mat-raised-button
+      color="primary"
+      class="mr-10"
+      (click)="onClick('yes')"
+      [ngClass]="{ shake: isShaking }"
+    >
+      YES
+    </button>
+
+    <!-- NO button -->
+    <button mat-raised-button color="accent" (click)="onClick('no')">NO</button>
+  </div>
+
+  <!-- GIFs or other content -->
+
+  <div *ngIf="choiceYes">
+    <H1 class="text-3xl font-semibold">🐱🐱🐱 PURRFECT CHOICE!!! 🐱🐱🐱 </H1>
+  </div>
+  <div *ngIf="additionalGif" class="flex justify-center space-x-4 mt-4">
+    <img
+      [src]="additionalGif"
+      alt="Funny GIF"
+      class="w-32 h-32 rounded-lg shadow-md"
+    />
+    <img
+      [src]="additionalGif"
+      alt="Funny GIF"
+      class="w-32 h-32 rounded-lg shadow-md"
+    />
+    <img
+      [src]="additionalGif"
+      alt="Funny GIF"
+      class="w-32 h-32 rounded-lg shadow-md"
+    />
+    <img
+      [src]="additionalGif"
+      alt="Funny GIF"
+      class="w-32 h-32 rounded-lg shadow-md"
+    />
+    <img
+      [src]="additionalGif"
+      alt="Funny GIF"
+      class="w-32 h-32 rounded-lg shadow-md"
+    />
+  </div>
+
+  <mat-card
+    *ngIf="selectedGif"
+    class="mt-4 p-4 shadow-lg flex flex-col justify-center items-center"
+  >
+    <img [src]="selectedGif" alt="Funny GIF" class="rounded-lg shadow-md" />
+  </mat-card>
+</div>
